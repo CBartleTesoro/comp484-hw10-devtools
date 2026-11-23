@@ -10,6 +10,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.pet-button').click(clickedPetButton);
     $('.feed-button').click(clickedfeedButton);
 
+     $('.button-404').click(clicked404Button);
+
     // Unique 2: Toggleclass() and hover().
     //Toggleclass and hover are used here so when the mouse hovers over the cat image, it triggers a change. Toggle is what makes that change possible, toggling it on/off depending if the mouse is still over the image.
     $('.pet-image').hover(function() {
@@ -63,7 +65,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
   
     
   function clickedfeedButton(){ //new
-    pet_info.weight += 4;
+    pet_info.weight = pet_info.weight + "4";
     checkAndUpdatePetInfoInHtml();
     updatePetComment("Nom nom nom", "images/stuart.webp", "sounds/meow2s.mp4");
   }
@@ -127,3 +129,85 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.happiness').text(pet_info['happiness']);
   }
   
+document.querySelector('.treat-button').addEventListener('click', () => {
+  console.log('delicious treat, now in Console!');
+  console.info('Treat for the developer!')
+});
+
+
+document.querySelector('.play-button').addEventListener('click', logWarning);
+
+function logWarning() {
+  quoteStuart();
+}
+
+function quoteStuart() {
+  console.warn('Meow, this is a warning!');
+}
+
+
+document.querySelector('.pet-image').addEventListener('click', () => {
+  console.error(`STARE INTO THE VOID, DEVELOPER!.`);
+});
+
+
+
+document.querySelector('.exercise-button').addEventListener('click', () => {
+  console.table(pet_info);
+});
+
+
+document.querySelector('.group').addEventListener('click', () => {
+  const label = 'Group of logs';
+  console.group(label);
+});
+
+document.querySelector('.groupEnd').addEventListener('click', () => {
+  const label = 'Group of logs end';
+   console.groupEnd(label);
+});
+
+
+document.querySelector('.pet-button').addEventListener('click', () => {
+  const label = 'Cat timeline';
+  console.group(label);
+  console.info('Michelin');
+  console.info('Turbo');
+  console.info('Mimi');
+  console.info('Stuart');
+  console.groupEnd(label);
+});
+
+document.querySelector('.custom').addEventListener('click', () => {
+  const spacing = '5px';
+  const styles = 
+        `padding: ${spacing}; background-color: darkblue; color: white; font-style: 
+         italic; border: ${spacing} solid crimson; font-size: 2em;`;
+  console.log('%c Black is the new orange, meow!', styles);
+}); //Applied same color scheme as example, but changed the contents.
+
+
+//For the part 2 2 typeerror
+document.querySelector('.feed-button').addEventListener('click', () => {
+  document.querySelector('#date').textContent = new Date();
+});
+
+document.querySelector('.violation').addEventListener('click', (e) => {
+  const duration = 5000;
+  const start = new Date().getTime();
+  while (new Date().getTime() < start + duration) {
+    // Block the main thread for 5 seconds.
+  }
+}); //same code as guide but different timing, linked to a new button.
+
+/////////////////////////////////
+function clicked404Button(){
+  //Do nothing
+}
+
+
+document.querySelector('.button-404').addEventListener('click', (e) => {
+  fetch('./images/cat-file-that-does-not-exist.webp');
+});
+
+
