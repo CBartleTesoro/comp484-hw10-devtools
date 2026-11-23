@@ -1,0 +1,130 @@
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: helvetica, arial, sans-serif;
+    margin: 25px;
+  }
+  
+  main { /*Changed to avoid overflow from the image. */
+    display:flow-root;
+    height:auto;
+  }
+
+  
+  h1 {
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+  
+  p {
+    max-width: 600px;
+  }
+  
+  
+  li {
+    margin-bottom: 5px;
+  }
+  
+  footer {
+    padding-top: 25px;
+    border-top: 1px solid black;
+  }
+  
+  footer a {
+    float:left;
+    margin:5px;
+  }
+  
+  .pet-image {
+    height:250px;
+  }
+
+  .pet-comment { /* for the pet comment box */
+    display: none;
+    clear: both;
+    max-width: 250px;
+    margin: 12px 0 0;
+    padding: 10px 14px;
+    border: 1px solid #404853;
+    border-radius: 12px;
+    background-color: #bae8e8;
+    color: #1e2835;
+    font-weight: bold;
+  }
+
+  .pet-comment.is-visible {
+    display: block;
+  }
+
+  .pet-hover { /* so i can modify the image when hovering over it with the mouse.*/
+    transform: scaleX(-1); /*Rather to change to another image, i chose to invert horizontally */
+  }
+
+  .dashboard div {
+    display:block;
+  }
+  
+  .pet-image-container {
+    float:left; 
+    padding:10px;
+    min-height: 350px; /*So there is space below for the comment, and thus doesnt need to elnarge the window every time a button is pressed and a comment appears.*/
+  }
+  
+  .dashboard {
+    float:left;
+    padding:20px;
+  }
+  
+  .button-container {
+    margin-top:20px;
+  }
+  
+  .button-container button {
+    width: 100%; /* so the buttons span their width */
+    margin-right: 10px;
+    text-align: center;
+    /*display: inline-block;
+    float: left;*/
+    display: block; /*to stack the buttons */
+    float: none;
+    
+    font-size:15px;
+    background-color: #1e2835;
+    border-color: #404853;
+    cursor:pointer;
+    background-image: linear-gradient(to bottom,rgba(246,246,246,.1)0%,rgba(30,40,53,0)66%);
+    color: #fafafa;
+
+    padding: 12px 0; /*So the button are bigger */
+  }
+
+  /*Added CSS to change page layout, mostly reused from previous assigment, with changes to match the current scope */
+  body {
+    padding: 40px; 
+    background: #ffffff; 
+    margin: 0 auto;
+    /*width: 70%;*/
+    width: fit-content;
+    box-sizing: border-box; 
+    border: 10px solid grey; 
+  }
+
+  header {
+    background: #bae8e8; 
+    align-items: center;
+    border: 1px solid black;
+    padding: 0px 30px 0; /*To reposition the text to be lower than the top of the page. Same goes for the bottom. */
+  }
+  
+  /* I added this last so the background is black outside the main area, since the entire space of the page isnt being used to 100%. That way once its on the projector it will be less blinding. */
+  html {
+    min-height: 100%;
+    background: black;
+  }
