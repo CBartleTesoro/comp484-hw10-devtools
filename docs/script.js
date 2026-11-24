@@ -65,7 +65,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
   
     
   function clickedfeedButton(){ //new
-    pet_info.weight = pet_info.weight + "4";
+    pet_info.weight += 4;
     checkAndUpdatePetInfoInHtml();
     updatePetComment("Nom nom nom", "images/stuart.webp", "sounds/meow2s.mp4");
   }
